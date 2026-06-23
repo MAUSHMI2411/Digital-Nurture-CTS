@@ -1,0 +1,61 @@
+1. Big O Notation
+
+        Big O notation is a mathematical notation used to describe the time or space complexity of an algorithm in terms of input size. It helps analyze how efficiently an algorithm performs as the input grows. It ignores constants and focuses on the dominant term.
+
+        Examples:
+
+        O(1): Constant time
+
+        O(n): Linear time
+
+        O(log n): Logarithmic time
+
+        O(n²): Quadratic time
+
+
+
+2. Best, Average, and Worst Case Scenarios
+
+        These represent the different performance outcomes of an algorithm based on input conditions:
+
+        Best Case: The minimum time the algorithm takes, often when the target is found early.
+
+        Average Case: The expected time over all possible inputs, assuming uniform distribution.
+
+        Worst Case: The maximum time the algorithm takes, usually when the target is at the end or not present.
+
+
+
+3. Linear Search
+
+        Linear search is a simple search method that checks each element of the array one by one.
+
+        Best Case: O(1) – when the element is the first
+
+        Average Case: O(n) – element is in the middle
+
+        Worst Case: O(n) – element is at the end or not present
+
+        Advantage: Works on unsorted data
+
+        Disadvantage: Slow on large datasets
+
+
+
+4. Binary Search
+
+        Binary search is an efficient search method that repeatedly divides the sorted array in half.
+
+        Best Case: O(1) – when the element is in the middle
+
+        Average Case: O(log n)
+
+        Worst Case: O(log n)
+
+        Requirement: Data must be sorted
+
+        Advantage: Much faster than linear search on large, sorted data
+
+        Disadvantage: Cannot be used on unsorted data
+
+        

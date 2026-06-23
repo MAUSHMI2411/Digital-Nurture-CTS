@@ -1,0 +1,40 @@
+1. Understand Recursive Algorithms
+
+    Recursion is a programming technique where a method calls itself to solve a smaller version of the same problem.
+
+    Recursion simplifies problems that can be broken down into sub-problems.
+
+    It’s often used in calculations like factorial, Fibonacci, and tree traversal.
+
+    Example Concept:
+        To calculate future value:
+            FV = PV × (1 + rate) ^ years
+            This can be recursively written as:
+            FV(n) = FV(n-1) × (1 + rate)
+
+
+2. Time Complexity:
+
+    The recursive method runs once for each year.
+
+    Time Complexity: O(n) where n is the number of years.
+
+    Space Complexity: O(n) due to function call stack.
+
+
+3. Optimization :
+
+    Recursive methods can cause stack overflow for large n. Use memoization or iteration for optimization.
+
+    Optimized Iterative Version:
+        public static double futureValueIterative(double pv, double rate, int years) {
+            double result = pv;
+            for (int i = 0; i < years; i++) {
+                result *= (1 + rate);
+            }
+            return result;
+        }
+        
+    Time Complexity: O(n)
+
+    Space Complexity: O(1)
