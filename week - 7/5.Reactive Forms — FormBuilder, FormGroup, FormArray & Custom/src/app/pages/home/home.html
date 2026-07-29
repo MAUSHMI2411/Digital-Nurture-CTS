@@ -1,0 +1,28 @@
+<h1>{{portalName}}</h1>
+
+<input
+type="text"
+[(ngModel)]="studentName"
+placeholder="Enter Student Name">
+
+<h2>
+
+Welcome
+
+{{studentName}}
+
+</h2>
+
+<button
+
+(click)="enrollNow()"
+
+[disabled]="!isPortalOpen">
+
+Enroll Now
+
+</button>
+
+<br><br>
+
+{{message}}
