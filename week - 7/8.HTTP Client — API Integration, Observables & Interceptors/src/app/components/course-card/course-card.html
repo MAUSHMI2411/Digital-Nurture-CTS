@@ -1,0 +1,95 @@
+<div class="card" appHighlight appCardHover>
+
+<img
+[src]="imageUrl"
+width="80">
+
+<h2>
+
+{{course.name | uppercase}}
+
+</h2>
+
+<p>
+
+Code :
+
+{{course.code | lowercase}}
+
+</p>
+
+<p>
+
+Credits :
+
+{{course.credits}}
+
+</p>
+
+<p>
+
+Fee :
+
+{{course.fee | currency}}
+
+</p>
+
+<p>
+
+Start Date :
+
+{{course.startDate | date:'dd/MM/yyyy'}}
+
+</p>
+
+<div [ngSwitch]="course.category">
+
+<p *ngSwitchCase="'Frontend'">
+
+🌐 Frontend Course
+
+</p>
+
+<p *ngSwitchCase="'Backend'">
+
+⚙️ Backend Course
+
+</p>
+
+<p *ngSwitchDefault>
+
+📚 General Course
+
+</p>
+
+</div>
+
+<p
+
+[ngClass]="{
+
+'available':course.available,
+
+'closed':!course.available
+
+}">
+
+{{course.gradeStatus | gradeStatus}}
+
+</p>
+
+<button
+
+(click)="enroll()"
+
+[ngStyle]="{
+
+'background-color':course.available?'green':'red'
+
+}">
+
+Enroll
+
+</button>
+
+</div>

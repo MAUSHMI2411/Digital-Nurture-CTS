@@ -1,0 +1,115 @@
+<h1>Student Enrollment Form</h1>
+
+<form #enrollForm="ngForm"
+      (ngSubmit)="onSubmit(enrollForm)">
+
+    <label>Student Name</label>
+
+    <input
+        type="text"
+        name="studentName"
+        required
+        minlength="3"
+        [(ngModel)]="studentName"
+        #nameCtrl="ngModel">
+
+    <div *ngIf="nameCtrl.touched && nameCtrl.errors?.['required']">
+        Name is required
+    </div>
+
+    <div *ngIf="nameCtrl.touched && nameCtrl.errors?.['minlength']">
+        Name must be at least 3 characters
+    </div>
+
+    <br><br>
+
+    <label>Email</label>
+
+    <input
+        type="email"
+        name="studentEmail"
+        required
+        email
+        [(ngModel)]="studentEmail"
+        #emailCtrl="ngModel">
+
+    <div *ngIf="emailCtrl.touched && emailCtrl.errors?.['required']">
+        Email is required
+    </div>
+
+    <div *ngIf="emailCtrl.touched && emailCtrl.errors?.['email']">
+        Invalid email
+    </div>
+
+    <br><br>
+
+    <label>Course Id</label>
+
+    <input
+        type="number"
+        name="courseId"
+        required
+        [(ngModel)]="courseId"
+        #courseCtrl="ngModel">
+
+    <div *ngIf="courseCtrl.touched && courseCtrl.invalid">
+        Course ID is required
+    </div>
+
+    <br><br>
+
+    <label>Preferred Semester</label>
+
+    <select
+        name="preferredSemester"
+        [(ngModel)]="preferredSemester">
+
+        <option>Odd</option>
+        <option>Even</option>
+
+    </select>
+
+    <br><br>
+
+    <input
+        type="checkbox"
+        name="agreeToTerms"
+        required
+        [(ngModel)]="agreeToTerms"
+        #termsCtrl="ngModel">
+
+    I Agree to Terms
+
+    <div *ngIf="termsCtrl.touched && termsCtrl.invalid">
+        Please accept the terms.
+    </div>
+
+    <br><br>
+
+    <button
+        type="submit"
+        [disabled]="enrollForm.invalid">
+
+        Submit
+
+    </button>
+
+    <button
+        type="button"
+        (click)="enrollForm.resetForm()">
+
+        Reset
+
+    </button>
+
+</form>
+
+<div *ngIf="submitted">
+
+    <h3>
+
+        Enrollment request submitted successfully!
+
+    </h3>
+
+</div>
