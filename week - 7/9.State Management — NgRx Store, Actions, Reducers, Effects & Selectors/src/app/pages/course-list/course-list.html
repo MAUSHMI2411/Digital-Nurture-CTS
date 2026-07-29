@@ -1,0 +1,30 @@
+<h1>Available Courses</h1>
+
+<hr>
+
+<h3 *ngIf="selectedCourse">
+
+Selected Course :
+
+{{selectedCourse}}
+
+</h3>
+
+<button (click)="addNewCourse()">
+    Add Demo Course
+</button>
+
+<br><br>
+<div class="container">
+
+<app-course-card
+
+*ngFor="let course of courses"
+
+[course]="course"
+
+(enrollRequested)="onEnroll($event)">
+
+</app-course-card>
+
+</div>
